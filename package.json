@@ -1,6 +1,6 @@
 {
   "name": "hubspot-aaa",
-  "version": "2.4.8",
+  "version": "2.4.9",
   "description": "A node wrapper for the HubSpot API",
   "main": "index.js",
   "scripts": {
