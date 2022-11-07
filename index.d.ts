@@ -23,7 +23,8 @@ interface BaseOptions {
 }
 
 export interface ApiOptions extends BaseOptions {
-  apiKey: string
+  apiKeyV3?: string
+  apiKey?: string
 }
 
 export interface AccessTokenOptions extends BaseOptions {
