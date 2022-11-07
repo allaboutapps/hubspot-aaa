@@ -17,17 +17,35 @@ import { File } from './lib/typescript/file'
 import { Subscription } from './lib/typescript/subscription'
 import { Campaign } from './lib/typescript/campaign'
 import { Broadcast } from './lib/typescript/broadcast'
+import { CRM } from './lib/typescript/crm'
 
 interface BaseOptions {
   baseUrl?: string
 }
 
-export interface ApiOptions extends BaseOptions {
+export interface BottleneckOptions {
+  maxConcurrent?: number | null;
+  minTime?: number;
+  highWater?: number | null;
+  reservoir?: number | null;
+  reservoirRefreshInterval?: number | null;
+  reservoirRefreshAmount?: number | null;
+  reservoirIncreaseInterval?: number | null;
+  reservoirIncreaseAmount?: number | null;
+  reservoirIncreaseMaximum?: number | null;
+  [key: string]: any;
+}
+
+export interface LimiterOptions {
+  limiter?: BottleneckOptions
+}
+
+export interface ApiOptions extends BaseOptions, LimiterOptions {
   apiKeyV3?: string
   apiKey?: string
 }
 
-export interface AccessTokenOptions extends BaseOptions {
+export interface AccessTokenOptions extends BaseOptions, LimiterOptions {
   accessToken: string
 }
 
@@ -53,6 +71,7 @@ declare class Hubspot {
   subscriptions: Subscription
   campaigns: Campaign
   broadcasts: Broadcast
+  crm: CRM
 }
 
 export default Hubspot
