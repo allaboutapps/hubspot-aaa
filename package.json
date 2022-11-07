@@ -1,7 +1,7 @@
 {
-  "name": "hubspot-aaa",
-  "version": "2.4.9",
-  "description": "A node wrapper for the HubSpot API",
+  "name": "allaboutapps-legacy-hubspot",
+  "version": "2.5.1",
+  "description": "A legacy node wrapper for the HubSpot API",
   "main": "index.js",
   "scripts": {
     "build": "npm install && npm test && npm run lint",
@@ -17,15 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/MSWagner/node-hubspot#hubspot-aaa"
+    "url": "https://github.com/allaboutapps/hubspot-aaa"
   },
   "keywords": [
     "hubspot"
   ],
-  "author": {
-    "name": "Brian Falk",
-    "url": "https://github.com/brainflake/"
-  },
   "license": "MIT",
   "dependencies": {
     "bottleneck": "^2.3.0",
